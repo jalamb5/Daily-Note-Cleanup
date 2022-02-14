@@ -14,7 +14,7 @@ template = open(os.path.join(notes_path, './Archive/DailyNoteTemplate.md'))
 
 template_lines = template.readlines()[1:]
 
-archive_time = 604800
+archive_time = 604800 # Default value is 7 days.
 now = time.time()
 cutoff = now - archive_time 
 
