@@ -1,7 +1,7 @@
 # Obsidian Daily Note Cleanup
 
 This is a simple script that completes the following tasks:
-- #### Move 'empty' files to the trash
+#### Move 'empty' files to the trash
 
 'Empty' is determined by comparing each file to the Template file used by Obsidian to create a new note each day.
 
@@ -9,7 +9,7 @@ My template generates a title line based on the date, since this will always be 
 
 The remaining lines are checked for any differences, if there are none the file will be moved to the Trash.
 
-- #### Move files created 7 or more days ago to an Archive folder
+#### Move files created 7 or more days ago to an Archive folder
 
 After removing 'empty' files, the script checks if each remaining file was created 7 or more days ago.
 
