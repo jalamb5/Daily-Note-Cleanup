@@ -14,9 +14,9 @@ template = open(os.path.join(notes_path, './Archive/DailyNoteTemplate.md'))
 
 template_lines = template.readlines()[1:]
 
-week = 604800
+archive_time = 604800
 now = time.time()
-cutoff = now - week 
+cutoff = now - archive_time 
 
 for file in files:
     if os.path.isfile(os.path.join(notes_path, file)):
