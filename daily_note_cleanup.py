@@ -10,7 +10,7 @@ notes_path = '/Users/justinlamb/Library/Mobile Documents/iCloud~md~obsidian/Docu
 trash_path = '/Users/justinlamb/.Trash/'
 archive_path = '/Users/justinlamb/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/Daily Notes/Archive'
 files = os.listdir(notes_path)
-template = open(os.path.join(notes_path, './Archive/DailyNoteTemplate.md'))
+template = open(os.path.join(notes_path, './Templates/DailyNoteTemplate.md'))
 
 template_lines = template.readlines()[1:]
 
