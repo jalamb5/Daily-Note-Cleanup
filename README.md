@@ -1,4 +1,6 @@
 # Obsidian Daily Note Cleanup
+**Ruby version preferred**
+_Python script is older and not updated_
 
 This is a simple script that completes the following tasks:
 #### Move 'empty' files to the trash
