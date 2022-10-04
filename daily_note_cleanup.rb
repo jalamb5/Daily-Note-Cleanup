@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+# daily_note_cleanup.py rewritten in Ruby.
+# Allows flexibility of template lines, ie. date line dynamically extracted rather than removing line 1
+# Moves notes which match template array exactly to trash
+# Moves notes with birthtime of greater than 7 days to Archive folder
+
 require 'fileutils'
 
 OBSIDIAN_PATH = '/Users/justinlamb/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/'
