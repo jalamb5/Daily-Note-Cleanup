@@ -2,6 +2,8 @@
 **Ruby version preferred**
 _Python script is older and not updated_
 
+![Code Sample](./daily_note_cleanup.png)
+
 This is a simple script that completes the following tasks:
 #### Move 'empty' files to the trash
 
