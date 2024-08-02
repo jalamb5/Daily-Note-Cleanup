@@ -47,7 +47,8 @@ Optional:
 
 ### Automation
 Example cron schedule:
-`0 9 * * 5 /usr/bin/ruby /Users/usr/repos/Daily-Note-Cleanup/daily_note_cleanup.rb >> /Users/usr/repos/Daily-Note-Cleanup/cron_log.log 2>&1`
+`0 9 * * 5 /Users/usr/.rbenv/shims/ruby /Users/usr/repos/Daily-Note-Cleanup/daily_note_cleanup.rb >> /Users/usr/repos/Daily-Note-Cleanup/cron_log.log 2>&1`
 
-This schedule will run at 9:00AM (0 9) every Friday (5)
-Any output/errors are logged to `cron_log.log`
+- This schedule will run at 9:00AM (0 9) every Friday (5)
+- Path to ruby assumes rbenv, update depending on Ruby location
+- Any output/errors are logged to `cron_log.log`
