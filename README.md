@@ -44,3 +44,10 @@ Variables that should be updated when using on a different system:
 Optional:
 
 `archive_time` - default set to 7 days, can be adjusted to any time period
+
+### Automation
+Example cron schedule:
+`0 9 * * 5 /usr/bin/ruby /Users/usr/repos/Daily-Note-Cleanup/daily_note_cleanup.rb >> /Users/usr/repos/Daily-Note-Cleanup/cron_log.log 2>&1`
+
+This schedule will run at 9:00AM (0 9) every Friday (5)
+Any output/errors are logged to `cron_log.log`
