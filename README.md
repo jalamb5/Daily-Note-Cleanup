@@ -19,7 +19,7 @@ The remaining lines are checked for any differences, if there are none the file 
 
 After removing 'empty' files, the script checks if each remaining file was created 7 or more days ago.
 
-If the file is 7+ days old, it is moved to Archive.
+If the file is 7+ days old, it is moved to a folder in Archive based on year. 
 
 
 ### Configuration

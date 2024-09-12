@@ -22,7 +22,10 @@ notes = Dir["#{OBSIDIAN_PATH}Daily Notes/*.md"].select
 
 notes.each do |file|
   note = []
+  year = File.basename(file)[0..3]
+  dir = "#{ARCHIVE_PATH}/#{year}"
+  Dir.mkdir(dir) unless Dir.exist?(dir)
   File.foreach(file) { |line| note << line unless line.match? Regexp.union(IGNORE_LINE) }
   FileUtils.mv(file, TRASH_PATH) if note == template
-  FileUtils.mv(file, ARCHIVE_PATH) if File.stat(file).birthtime < Time.now - ARCHIVE_TIME
+  FileUtils.mv(file, dir) if File.stat(file).birthtime < Time.now - ARCHIVE_TIME
 end
