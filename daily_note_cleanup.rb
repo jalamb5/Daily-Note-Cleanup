@@ -14,11 +14,15 @@ TRASH_PATH = '/Users/justinlamb/.Trash/'
 IGNORE_LINE = ['{{date:dddd, MMMM Do YYYY}}', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
                'Sunday'].freeze
 ARCHIVE_TIME = (24 * 3600) * 7
+trash_count = 0
+archive_count = 0
 
 template = []
 File.foreach(TEMPLATE_PATH) { |line| template << line unless line.match? Regexp.union(IGNORE_LINE) }
 
 notes = Dir["#{OBSIDIAN_PATH}Daily Notes/*.md"].select
+
+puts "📝 Checking Daily Notes"
 
 notes.each do |file|
   note = []
@@ -26,6 +30,8 @@ notes.each do |file|
   dir = "#{ARCHIVE_PATH}/#{year}"
   Dir.mkdir(dir) unless Dir.exist?(dir)
   File.foreach(file) { |line| note << line unless line.match? Regexp.union(IGNORE_LINE) }
-  FileUtils.mv(file, TRASH_PATH) if note == template
-  FileUtils.mv(file, dir) if File.stat(file).birthtime < Time.now - ARCHIVE_TIME
+  FileUtils.mv(file, TRASH_PATH) && trash_count += 1 if note == template
+  FileUtils.mv(file, dir) && archive_count += 1 if File.stat(file).birthtime < Time.now - ARCHIVE_TIME
 end
+
+puts "✅ #{archive_count} note(s) archived. #{trash_count} note(s) deleted."
